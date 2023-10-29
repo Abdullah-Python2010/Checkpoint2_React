@@ -1,0 +1,26 @@
+FUNCTION Dot_Product(VAR num : INTEGER) : INTEGER
+VAR
+    ps : INTEGER : 0
+    IR : ARRAY_OF ARRAY_OF[num] INTEGER[];
+    n_length := 0;
+BEGIN
+    n_length := IR[0].length
+    FOR subarray FROM 0 TO IR.length-1 STEP 1  DO
+        IF subarray.length > n_length THEN
+            Write('Please enter Arrays of equal sizes')
+        ELSE
+            FOR j FROM 0 TO n_length STEP 1  DO
+                // ps := ps + IR[0] + IR[1] + IR[2]
+                ps := ps + IR[subarray][j]
+            END_FOR
+    END_FOR
+    RETURN ps;
+END
+
+
+ALGORITHM Calc_Dot_Product
+BEGIN
+    Write(Dot_Product(n))
+END
+
+

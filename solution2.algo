@@ -1,0 +1,25 @@
+FUNCTION Insertion_Sort(arr : ARRAY_OF INTEGER[]) : ARRAY_OF INTEGER[];
+VAR
+    sorted : ARRAY_OF INTEGER [];
+    swap : BOOLEAN : FALSE;
+BEGIN
+    WHILE (swap == TRUE) DO
+        FOR i FROM 0 TO arr.length STEP 1  DO
+            IF (arr[i] > arr[i + 1]) THEN
+                arr[i + 1] = arr[i];
+                arr[i] = arr[i + 1];
+                swap := TRUE;
+            END_IF
+        END_FOR
+    END_WHILE
+    
+    RETURN sorted;
+END
+
+ALGORITHM Sort
+VAR
+    input_arr : ARRAY_OF [];
+BEGIN
+    Read(input_arr)
+    Write(Insertion_Sort(input_arr))
+END
